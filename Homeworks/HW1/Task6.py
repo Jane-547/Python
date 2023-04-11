@@ -7,9 +7,13 @@
 
 number = input('Введите шестизначный номер билета: ')
 
-first_part = sum(map(int, number[:3]))
-second_part = sum(map(int, number[3:]))
-if first_part == second_part:
-    print('Yes')
+if int(number) < 99999 or int(number) > 1000000:
+    print('Вы ввели не шестизначный номер')
+
 else:
-    print('No')
+    first_part = sum(map(int, number[:3]))
+    second_part = sum(map(int, number[3:]))
+    if first_part == second_part:
+        print('Yes')
+    else:
+        print('No')
