@@ -6,6 +6,9 @@
 
 total = int(input('Сколько всего журавликов? '))
 
-print(f'Петя - {int(total) // 6}')
-print(f'Сережа - {int(total) // 6}')
-print(f'Катя - {int(total) // 6 * 4}')
+if int(total) % 6 != 0:
+    print('Решений нет!')
+else:
+    print(f'Петя - {int(total) // 6}')
+    print(f'Сережа - {int(total) // 6}')
+    print(f'Катя - {int(total) // 6 * 4}')
