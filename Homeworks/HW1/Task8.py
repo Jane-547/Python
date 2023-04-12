@@ -7,7 +7,7 @@ part_n = int(input('Сколько долек в длину? '))
 part_m = int(input('Сколько долек в ширину? '))
 part_k = int(input('Сколько долек нужно отломить? '))
 
-if part_k % part_n == 0 or part_k % part_m == 0 and part_k <= part_n * part_m:
+if (part_k % part_n == 0 or part_k % part_m == 0) and part_k <= part_n * part_m:
     print('YES')
 else:
     print('NO')
