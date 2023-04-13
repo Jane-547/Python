@@ -8,10 +8,11 @@ multiplication = int(input('Введите произведение чисел: 
 
 x = 0
 
-while x < amount:
+for x in range (1000):
     y = amount - x
     if x + y == amount and x * y == multiplication:
         print(f'x = {x}, y = {y}')
+        break
     x += 1
-# else:
-#     print('Решений нет!')
+else:
+    print('Решений нет!')
