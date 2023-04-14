@@ -7,7 +7,7 @@ if value_N < 0:
 
 k_degree = result = 0
 
-while result <= value_N:
+while 2 ** k_degree <= value_N:
     result = 2 ** k_degree
     if result <= value_N:
         print(result, end = " ")
