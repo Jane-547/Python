@@ -7,4 +7,4 @@ print(array, end = " ")
 
 element = int(input(f'\nВведите число X: '))
 
-print(array.count(element))
+print(f'Количество {element} в массиве - {array.count(element)}')
