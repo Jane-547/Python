@@ -11,16 +11,18 @@
 
 value = int(input('Введите число n: '))
 
+
 def fib(n):
-  if n == 0:
-    return 0
-  elif n == 1 or n == 2:
-    return 1
-  return fib(n-1) + fib(n-2)
+    if n == 0:
+        return 0
+    elif n == 1 or n == 2:
+        return 1
+    return fib(n - 1) + fib(n - 2)
+
 
 sequence_list = [0]
 for i in range(1, value):
-  sequence_list.append(fib(i))
+    sequence_list.append(fib(i))
 
 print(sequence_list)
 
@@ -40,15 +42,15 @@ print(mark_list)
 
 min_mark = max_mark = 1
 for i in range(size):
-  if mark_list[i] < min_mark:
-    min_mark = mark_list[i]
-  elif mark_list[i] > max_mark:
-    max_mark = mark_list[i]
-  i += 1
-  
+    if mark_list[i] < min_mark:
+        min_mark = mark_list[i]
+    elif mark_list[i] > max_mark:
+        max_mark = mark_list[i]
+    i += 1
+
 for i in range(size):
-  if mark_list[i] == max_mark:
-    mark_list[i] = min_mark
+    if mark_list[i] == max_mark:
+        mark_list[i] = min_mark
 
 print(mark_list)
 
@@ -63,13 +65,13 @@ llist = []
 i = 1
 
 for i in range(1, abs(value)):
-  if value % i == 0:
-    llist.append(i)
+    if value % i == 0:
+        llist.append(i)
 
 if (len(llist) < 3):
-  print(f'{value} - простое число')
+    print(f'{value} - простое число')
 else:
-  print(f'{value} - не простое число')
+    print(f'{value} - не простое число')
 
 # Дано натуральное число N и
 # последовательность из N элементов.
@@ -84,4 +86,3 @@ import Methods
 how_much = int(input('Введите число: '))
 
 Methods.fill_output(how_much)
-
