@@ -1,48 +1,91 @@
-25. Напишите программу, которая принимает на вход строку, и отслеживает,
-сколько раз каждый символ уже встречался. Количество повторов добавляется к символам с помощью постфикса формата _n.
-
-ababac
-a_1
-b_1
-a_2
-b_2
-a_3
-c_1
-
-dict1 = dict()
-
-symbols = input("Введите буквы: ")
-
-for syn in symbols:
-    if syn in dict1:
-        dict1[syn] +=1
+"""
+Задача 26: Напишите программу, которая на вход принимает два числа A и B, и возводит число
+А в целую степень B с помощью рекурсии.
+"""
+def degree (a, b, c):
+    if b != 0:
+        c *= a
+        b -= 1
     else:
-        dict1[syn] = 0
+        return c
+    return degree(a, b, c)
 
-    if dict1[syn] == 0:
-        print(syn)
+num1 = int(input("Введи число А: "))
+
+num2 = int(input("Введи число Б: "))
+
+c = 1
+
+print(degree (num1, num2, c))
+
+
+def my_power(a, b): # Второй вариант
+    if b == 0:
+        return 1
     else:
-        print(f"{syn}_{dict1[syn]}")
+        return a * my_power(a, b - 1)
 
 
-2. Пользователь вводит текст(строка). Словом считается последовательность непробельных символов идущих подряд, слова разделены одним или большим числом пробелов. Определите, сколько различных слов содержится в этом тексте.
-She sells sea shells on the sea shore The shells that she sells are sea shells I'm sure So if she sells sea shells on the sea shore I'm sure that the shells are sea shore shells
+a = int(input())
+b = int(input())
+print(my_power(a, b))
 
-text = input("Введите текст: ").lower()
-unique_words = set(text.split())
-print("Количество различных слов:", len(unique_words))
+"""
+Дано натуральное чисел N и последовательность из N элементов.
+Требуется вывести эту последовательность в обратном порядке.
+"""
+
+def rotate (n):
+    if n == 0:
+        return " "
+    else:
+        a = int(input("Value "))
+        return rotate(n-1) + f" {a} "
 
 
+n = int(input("Enter n: "))
 
-3. “Задана последовательность неотрицательных целых чисел. Требуется определить значение наибольшего элемента последовательности, которая завершается первым встретившимся нулем (число 0 не входит в последовательность)”
+print(rotate(n))
+
+"""
+Напишите функцию, которая принимает одно число и проверяет, является ли оно простым
+
+*Напоминание: Простое число - это число, которое имеет 2 делителя: 1 и n(само число)*
+"""
 
 
-number = maxNumber = int(input("Введите цифру: "))
+def check(n):
+    i = 2
+    for i in range(2, n):
+        if n % i == 0:
+            return "NO "
 
-while (number != 0):
-    #if (number > maxNumber):
-    #    maxNumber = number
-    maxNumber = number if number > maxNumber else maxNumber
-    number = int(input("Введите цифру: "))
+    return "YES "
 
-print(f"Максимальный элемент: {maxNumber}")
+
+num = int(input("Input number: "))
+
+print (check(num))
+
+"""
+Хакер Василий получил доступ к классному журналу и хочет заменить все свои минимальные оценки на максимальные.
+Напишите программу, которая заменяет оценки Василия, но наоборот: все максимальные – на минимальные.
+
+
+1 5 2 1 5 4
+"""
+
+from random import randint
+
+n1_set = list(randint(1, 5) for i in range(int(input('Введите кол-во элементов первого множества: '))))
+print(n1_set)
+def change (list):
+    min_num = min(list)
+    max_num = max(list)
+    for i in range(len(list)):
+        if list[i] == max_num:
+            list[i] = min_num
+    return list
+
+print(change(n1_set))
+
