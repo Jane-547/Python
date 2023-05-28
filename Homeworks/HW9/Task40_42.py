@@ -13,7 +13,7 @@ import pandas as pd
 
 df = pd.read_csv('sample_data/california_housing_train.csv')
 
-print(df[(df['population'] > 0) & (df['population'] < 501)].median_house_value.mean())
+print(df[(df['population'] > 0) & (df['population'] < 500)].median_house_value.mean())
 
 """Задача 42: Узнать какая максимальная households в зоне минимального значения population."""
 
