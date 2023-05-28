@@ -36,14 +36,15 @@ def change(file_name, old_value):
 def delete_contact(file_name, old_value):
     with open(file_name, "r+") as data1:
         contents = data1.read().splitlines()
-        if old_value in contents:
-            contents.remove(old_value)
-        else:
-            print('Такого элемента нет.')
-        with open(file_name, "w") as data2:
-            for i in contents:
-                data2.write(i)
-                data2.write('\n')
+        for line in contents:
+            if old_value in line:
+                contents.remove(line)
+            else:
+                print('Такого элемента нет.')
+            with open(file_name, "w") as data2:
+                for i in contents:
+                    data2.write(i)
+                    data2.write('\n')
 
 
 def create(base):
